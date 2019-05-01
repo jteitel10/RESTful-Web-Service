@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<body>
+  <div id='root'></div>
+  
+  <script type='text/babel'>
+    class Customer extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          id: null,
+          data: null
+        };
+      }
+  
+      fetch = (id) => {
+        let url = id == null ? '/customer' : '/customer/' + id
+        axios.get(url).then((response) => {
+          this.setState({data: JSON.stringify(response.data)});
+        }).catch((error) => {
+          this.setState({data: error.toString()});
+        });
+      }
+  
+      render() {
+        return (
+          <div>
+            <h1>Customer List</h1>
+            <code>{this.state.data}</code>
+            <br/>
+            <br/>
+            <input type='text' id='id' value={this.state.id} onChange={(e) => this.setState({id: e.target.value})}></input>&nbsp;&nbsp;
+            <button id='button' onClick={() => this.fetch(this.state.id)}>Fetch</button>
+          </div>
+        );
+      }
+    }
+
+     ReactDOM.render(
+      <Customer/>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
