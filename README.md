@@ -7,9 +7,9 @@ Contains two GET routes to display certain information.  One displays a collecti
 
 # Installing
 - One must install the docker, nodeJS, and reactJS.  Please refer to the following links to get an idea of how to properly set up the environment for the progrma:
--Docker: https://docs.docker.com/docker-for-windows/install/
--NodeJS: https://www.guru99.com/download-install-node-js.html
--ReactJS: https://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm
+- Docker: https://docs.docker.com/docker-for-windows/install/
+- NodeJS: https://www.guru99.com/download-install-node-js.html
+- ReactJS: https://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm
 
 #  Give an example
 - Use JSON to create the file database, the general format would look like:
