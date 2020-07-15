@@ -26,6 +26,3 @@ Contains two GET routes to display certain information.  One displays a collecti
 - ReactJS - user interface
 - NodeJS - web framework 
 - AWS - VM Carrier
-
-#  Author
- *Javier Teitelbaum* 
